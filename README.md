@@ -1,6 +1,6 @@
 # @mizchi/selector-generator
 
-Playwright selector generator extracted from [microsoft/playwright](https://github.com/microsoft/playwright)
+Playwright selector generator extracted from [microsoft/playwright](https://github.com/microsoft/playwright) for E2E automation.
 
 ```bash
 $ npm install @mizchi/selector-generator
@@ -15,6 +15,9 @@ const generateSelector = createSelectorGenerator(window);
 
 // call with DOM element
 window.addEventListener("click", (e) => {
+  // Only with alt+click
+  // if (e.altKey) e.preventDefault();
+
   const found = generateSelector(e.target as HTMLElement);
   const locator = toLocator(found.selector, "javascript");
   console.log(`page.${locator}`);
@@ -27,6 +30,12 @@ window.addEventListener("click", (e) => {
     page.getByRole('button', { name: '#btn' })
   */
 });
+```
+
+## Usage(Bookmarklet)
+
+```js
+javascript:import("https://unpkg.com/@mizchi/selector-generator/dist/index.js").then((({createSelectorGenerator:e,toLocator:t})=>{const o=e(window);window.addEventListener("click",(e=>{const c=o(e.target),n=t(c.selector,"javascript");console.info(`page.${n}`)}))}));
 ```
 
 ## LICENSE
