@@ -1,0 +1,35 @@
+{
+  "name": "@mizchi/selector-generator",
+  "version": "1.50.0-next",
+  "description": "",
+  "engines": {
+    "node": ">=22.*"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "node --experimental-strip-types --experimental-transform-types --no-warnings=ExperimentalWarning build.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "mizchi",
+  "license": "Apache-2.0",
+  "packageManager": "pnpm@9.9.0+sha256.7a4261e50d9a44d9240baf6c9d6e10089dcf0a79d0007f2a26985a6927324177",
+  "devDependencies": {
+    "@types/node": "^22.9.1",
+    "esbuild": "^0.24.0",
+    "esbuild-plugin-inline-css": "^0.0.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "zx": "^8.2.2"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./types/index.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "types"
+  ]
+}

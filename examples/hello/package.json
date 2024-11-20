@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "dependencies": {
+    "@mizchi/selector-generator": "link:../.."
+  },
+  "devDependencies": {
+    "vite": "^5.4.11"
+  }
+}

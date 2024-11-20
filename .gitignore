@@ -1,0 +1,4 @@
+playwright-src
+dist
+node_modules
+types
